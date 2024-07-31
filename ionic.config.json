@@ -1,0 +1,7 @@
+{
+  "name": "Juego Cinético",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
