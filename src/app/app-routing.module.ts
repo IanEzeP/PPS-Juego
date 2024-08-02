@@ -12,9 +12,14 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'juego',//login
     pathMatch: 'full'
   },
+  {
+    path: 'juego',
+    loadChildren: () => import('./pages/juego/juego.module').then( m => m.JuegoPageModule)
+  },
+
 ];
 
 @NgModule({

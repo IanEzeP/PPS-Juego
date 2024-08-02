@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Juego Cinético</string>
+    <string name="title_activity_main">Juego Cinético</string>
+    <string name="package_name">pps.iep.juego</string>
+    <string name="custom_url_scheme">pps.iep.juego</string>
+</resources>
