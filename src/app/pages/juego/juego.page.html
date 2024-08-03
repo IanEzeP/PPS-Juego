@@ -1,12 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>juego</ion-title>
+    <ion-title><h1>Tiempo: {{this.timer}}s</h1></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="container">
-    <div class="box" id="box"></div>
+    <div class="box" id="box">
+      <img src="../../../{{ heroePath }}" style="max-height: 100px; max-width: 100px;" alt="">
+    </div>
   </div>
   <canvas id="canvas"></canvas>
 </ion-content>

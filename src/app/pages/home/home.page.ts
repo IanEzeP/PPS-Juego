@@ -10,9 +10,46 @@ import Swal from 'sweetalert2';
 })
 export class HomePage implements OnInit {
 
+  public team: string = '';
+
+  public showTeam: boolean = true;
+  public showHeroes: boolean = false;
+
+  public arrayMarvel: Array<any> = [
+    { hero: 'Spiderman', logo: 'spidermanlogo3'}, 
+    { hero: 'CapAmerica', logo: 'capilogo2'}, 
+    { hero: 'BlackWidow', logo: 'BlackWidowLogoPNG'}
+  ];
+  public arrayDC: Array<any> = [
+    { hero: 'WonderWoman', logo: 'WWlogo'}, 
+    { hero: 'Superman2', logo: 'supermanlogo'}, 
+    { hero: 'Batman2', logo: 'Batmanlogopng'}
+  ];
+  public arrayClass: Array<string> = ['red', 'blue', 'dark'];
+
+  public displayArray: Array<any> = [];
+
   constructor(private auth: AuthService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
+
+  chooseTeam(equipo: string) {
+    this.team = equipo;
+    this.showTeam = false;
+    this.showHeroes = true;
+
+    let arrayTeam = this.team == 'dc' ? this.arrayDC : this.arrayMarvel;
+    
+    for (let i = 0; i < 3; i++) {
+      this.displayArray[i] = { hero: arrayTeam[i].hero, logo: `assets/images/${arrayTeam[i].logo}.png`, class: this.arrayClass[i]};
+    }
+  }
+
+  chooseHero(heroe: string) {
+    this.router.navigateByUrl(`/juego/${heroe}/${this.team}`);
+  }
 
   cerraSesion() {
     Swal.fire({

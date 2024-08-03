@@ -1,10 +1,16 @@
+ion-content {
+    --background: url(../../../assets/images/ciudad1.jpg) no-repeat center center / cover;
+    --overflow: hidden;
+}
+
 div.container {
     height: 93vh; /* Set height to 100% of viewport height */
 
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(0, 0, 255);
+    
+    background-color: rgba(255, 255, 255, 0.397);
     border: 5px solid rgb(100, 0, 100);
 }
 
@@ -12,7 +18,7 @@ div.box {
     position: absolute;
     //right: 0;
     top: 50px;
-    width: 80px;
-    height: 80px;
-    background-color: rgb(255, 0, 0);
+    width: 100px;
+    height: 100px;
+    //background-color: rgb(255, 0, 0);
 }

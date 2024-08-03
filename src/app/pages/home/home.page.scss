@@ -6,23 +6,57 @@ div.home {
 
 ion-content {
   --overflow: hidden;
-  --background: rgb(0, 88, 104);
+  --background: rgb(57, 0, 104);
 }
 
-ion-button {
+ion-button.comic {
   display: block;
-  height: 48%;
-  text-transform: initial;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-bottom: 3%;
-  margin-top: 3%;
-  font-size: 2rem;
-  font-weight: 600;
+  height: 50%;
+  //text-transform: initial;
+  margin-left: -0.1rem;
+  margin-right: -0.1rem;
+  //margin-bottom: 3%;
+  margin-top: -1px;
+  //font-size: 2rem;
+  //font-weight: 600;
 }
+
+ion-button.heroe {
+  display: block;
+  height: 33%;
+  //text-transform: initial;
+  margin-left: -0.1rem;
+  margin-right: -0.1rem;
+  //margin-bottom: 3%;
+  margin-top: -1px;
+  //font-size: 2rem;
+  //font-weight: 600;
+}
+
 .marvel {
-  --background: linear-gradient(#e2001a, #c50219);
+  --background: #F0131E;
 }
 .dcComics {
-  --background: linear-gradient(#0376f2, #0365ce);
+  --background: #0376f2;
+}
+.dark {
+  --background: rgb(12, 12, 12);
+  img {
+    max-height: 200px;
+    height: 200px;
+  }
+}
+.red {
+  --background: rgb(255,0,0);
+  img {
+    max-height: 200px;
+    height: 200px;
+  }
+}
+.blue {
+  --background: rgb(0, 81, 255);
+  img {
+    max-height: 200px;
+    height: 200px;
+  }
 }

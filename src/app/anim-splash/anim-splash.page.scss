@@ -1,0 +1,42 @@
+ion-content {
+    --background: linear-gradient(#1074e7, #c9156f);
+    --overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+@-webkit-keyframes slide-out-top{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}}@keyframes slide-out-top{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}}
+.logo {
+    height: 180px;
+    margin-top: 30%;
+    -webkit-animation:slide-out-top .7s cubic-bezier(.55,.085,.68,.53) .5s both;animation:slide-out-top .7s cubic-bezier(.55,.085,.68,.53) .5s both;
+}
+
+@-webkit-keyframes shake-horizontal{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%{-webkit-transform:translateX(10px);transform:translateX(10px)}80%{-webkit-transform:translateX(8px);transform:translateX(8px)}90%{-webkit-transform:translateX(-8px);transform:translateX(-8px)}}@keyframes shake-horizontal{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%{-webkit-transform:translateX(10px);transform:translateX(10px)}80%{-webkit-transform:translateX(8px);transform:translateX(8px)}90%{-webkit-transform:translateX(-8px);transform:translateX(-8px)}}
+.txt1 {
+    margin-top: 38%;
+
+    background-color: var(--primary-color);
+    color: rgb(241, 241, 241);
+
+    font-size: 35px;
+    font-weight: 600;
+
+    -webkit-animation:shake-horizontal 1s cubic-bezier(.455,.03,.515,.955) .7s both;animation:shake-horizontal 1s cubic-bezier(.455,.03,.515,.955) .7s both;
+}
+
+@-webkit-keyframes shake-horizontal{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%{-webkit-transform:translateX(10px);transform:translateX(10px)}80%{-webkit-transform:translateX(8px);transform:translateX(8px)}90%{-webkit-transform:translateX(-8px);transform:translateX(-8px)}}@keyframes shake-horizontal{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%{-webkit-transform:translateX(10px);transform:translateX(10px)}80%{-webkit-transform:translateX(8px);transform:translateX(8px)}90%{-webkit-transform:translateX(-8px);transform:translateX(-8px)}}
+.txt2 {
+    margin-top: 45%;
+
+    background-color: var(--primary-color);
+    color: rgb(241, 241, 241);
+
+    font-size: 35px;
+    font-weight: 600;
+
+    -webkit-animation:shake-horizontal 1s cubic-bezier(.455,.03,.515,.955) .9s both;animation:shake-horizontal 1s cubic-bezier(.455,.03,.515,.955) .9s both;
+}

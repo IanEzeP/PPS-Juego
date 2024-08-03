@@ -40,14 +40,14 @@ export class LoginPage implements OnInit, OnDestroy {
     this.subsDatabase = this.data.getCollectionObservable('usuarios').subscribe((next: any) => {
       let result: Array<any> = next;
       this.arrayFirebase = [];
-      //this.arrayTestUsers = [];
+      this.arrayTestUsers = [];
 
       result.forEach((obj: any) => {
         this.arrayFirebase.push(new User(obj.id, obj.correo, obj.clave, obj.perfil, obj.sexo, obj.nombre));
         
         this.cargaFin = true;
       });
-      /*
+      
       this.arrayFirebase.forEach(user => {
         if (user.id == 1 || user.id == 2 || user.id == 3) {
           this.arrayTestUsers.push(user);
@@ -55,7 +55,7 @@ export class LoginPage implements OnInit, OnDestroy {
 
         this.cargaFin = true;
         console.log("Carga Fin");
-      });*/
+      });
     });
   }
 
@@ -112,9 +112,9 @@ export class LoginPage implements OnInit, OnDestroy {
     }
   }
 
-  fastLogin(email: string, clave: number) {
-    this.formLog.controls['email'].setValue(email);
-    this.formLog.controls['password'].setValue(clave);
+  onQuickUser(user: any) {
+    this.formLog.controls['email'].setValue(user.correo);
+    this.formLog.controls['password'].setValue(user.clave);
   }
 
   cleanInputs() {

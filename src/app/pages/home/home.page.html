@@ -1,20 +1,33 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      JUEGO CINETICO
+      Elíge a tu Héroe
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div class="home">
-    <ion-button class="marvel" expand="block">marvel</ion-button>
 
-    <ion-button class="dcComics" expand="block">dc</ion-button>
+  <div *ngIf="this.showTeam == true" class="home">
+    <ion-button class="comic marvel" expand="block" (click)="this.chooseTeam('marvel')">
+      <img src="../../../assets/images/MARVEL.png" alt="MARVEL">
+    </ion-button>
 
-    <ion-fab slot="fixed" vertical="bottom" horizontal="start">
-      <ion-fab-button color="danger" (click)="cerraSesion()"><ion-icon name="power-sharp" size="large"></ion-icon></ion-fab-button>
-    </ion-fab>
+    <ion-button class="comic dcComics" expand="block" (click)="this.chooseTeam('dc')">
+      <img src="../../../assets/images/DC.png" alt="DC Comics">
+    </ion-button>
+  </div>
+
+  <div *ngIf="this.showHeroes == true" class="home">
+    <ion-button *ngFor="let heroe of displayArray; let i = index" class="heroe {{ heroe.class }}" expand="block" (click)="this.chooseHero(heroe.hero)">
+      <img src="../../../{{ heroe.logo }}">
+    </ion-button>
   </div>
   
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="cerraSesion()">cerrar sesion</ion-button>
+  </ion-toolbar>
+</ion-footer>

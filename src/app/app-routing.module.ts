@@ -12,13 +12,18 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'juego',//login
+    redirectTo: 'login',//anim-splash
     pathMatch: 'full'
   },
   {
-    path: 'juego',
+    path: 'juego/:hero/:team',
     loadChildren: () => import('./pages/juego/juego.module').then( m => m.JuegoPageModule)
   },
+  {
+    path: 'anim-splash',
+    loadChildren: () => import('./anim-splash/anim-splash.module').then( m => m.AnimSplashPageModule)
+  },
+
 
 ];
 
