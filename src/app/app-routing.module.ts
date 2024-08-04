@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',//anim-splash
+    redirectTo: 'anim-splash',
     pathMatch: 'full'
   },
   {
@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'anim-splash',
     loadChildren: () => import('./anim-splash/anim-splash.module').then( m => m.AnimSplashPageModule)
   },
+  {
+    path: 'puntuacion',
+    loadChildren: () => import('./pages/puntuacion/puntuacion.module').then( m => m.PuntuacionPageModule)
+  },
+
 
 
 ];

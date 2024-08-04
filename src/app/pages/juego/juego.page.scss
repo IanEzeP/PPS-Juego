@@ -1,24 +1,102 @@
+
+
 ion-content {
     --background: url(../../../assets/images/ciudad1.jpg) no-repeat center center / cover;
     --overflow: hidden;
-}
-
-div.container {
-    height: 93vh; /* Set height to 100% of viewport height */
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    background-color: rgba(255, 255, 255, 0.397);
-    border: 5px solid rgb(100, 0, 100);
+    //min-height: 100vh;
+    //background: #212534;
+    //display: flex;
+    //align-items: center;
+    //flex-direction: column;
+    //padding-top: 2rem;
+    //padding-bottom: 2rem;
+    //box-sizing: border-box;
 }
 
 div.box {
     position: absolute;
     //right: 0;
     top: 50px;
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     //background-color: rgb(255, 0, 0);
 }
+
+div.container {
+    height: 91.2vh; /* Set height to 100% of viewport height */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    //background-color: rgba(255, 255, 255, 0.397);
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../../../assets/images/ciudad1.jpg) no-repeat center center / cover;
+
+    //border: 5px solid rgb(100, 0, 100);
+}
+
+.card {
+    background: #191c29;
+    //background-color: rgba(255, 255, 255, 0.397);
+
+    width:96%;
+    margin-left: 2%;
+    margin-top: 8px;
+    height: 98%;
+    //padding: 3px;
+    //position: relative;
+    border-radius: 6px;
+    //justify-content: center;
+    //align-items: center;
+    //text-align: center;
+    //display: flex;
+    //font-size: 1.5em;
+    //color: rgb(88 199 250 / 0%);
+    //cursor: pointer;
+    //font-family: cursive;
+  }
+  
+  
+  .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #ff5d5d, #e33c3c 43%, #c20000);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 1s linear infinite;
+  }
+  
+  .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #ff5d5d, #e33c3c 43%, #c20000);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }

@@ -13,9 +13,6 @@ import Swal from 'sweetalert2';
   selector: 'app-juego',
   templateUrl: './juego.page.html',
   styleUrls: ['./juego.page.scss'],
-  host: {
-    '(document:keydown)': 'keyPress($event)'
-  }
 })
 export class JuegoPage implements OnInit, OnDestroy {
 
@@ -71,30 +68,29 @@ export class JuegoPage implements OnInit, OnDestroy {
   startGame() {
     this.subscription = this.deviceMotion.watchAcceleration({ frequency: 100 }).subscribe((acceleration: DeviceMotionAccelerationData) => {
       
-      if(this.yPos >= 370 || this.yPos <= -370 || this.xPos >= 170 || this.xPos <= -170)
-      {
+      if(this.yPos >= 340 || this.yPos <= -340 || this.xPos >= 160 || this.xPos <= -160) {
         this.yPos = 0;
         this.xPos = 0;
         console.log("Limites tocados");
-        //this.gameOver();
+        this.gameOver();
       }
       //console.log(`Acelerómetro: X: ${acceleration.x} Y: ${acceleration.y} Z: ${acceleration.z}`);
-      console.log(`Acelerómetro: X: ${this.xPos} Y: ${this.yPos} Z: ${acceleration.z}`);
+      //console.log(`Acelerómetro: X: ${this.xPos} Y: ${this.yPos} Z: ${acceleration.z}`);
 
-      if (acceleration.x >= 1) {
+      if (acceleration.x >= 0.5) {
         this.xPos = this.xPos - (acceleration.x * 3);
       }
-      if (acceleration.x <= -1) {
+      if (acceleration.x <= -0.5) {
         this.xPos = this.xPos - (acceleration.x * 3);
       }
-      if (acceleration.y >= 1) {
+      if (acceleration.y >= 0.5) {
         this.yPos = this.yPos + (acceleration.y * 4);
       }
-      if (acceleration.y <= -1) {
+      if (acceleration.y <= -0.5) {
         this.yPos = this.yPos + (acceleration.y * 4);
       }
-      if((acceleration.y > -1 && acceleration.y < 1) && (acceleration.x > -1 && acceleration.x < 1) && acceleration.z >= 9) {
-        this.yPos = this.yPos + 5;//acceleration.z;
+      if((acceleration.y > -0.5 && acceleration.y < 0.5) && (acceleration.x > -0.5 && acceleration.x < 0.5) && acceleration.z >= 9) {
+        this.yPos = this.yPos + 3;//acceleration.z;
       }
 
       document.getElementById("box")!.style.position = "relative";
@@ -104,13 +100,14 @@ export class JuegoPage implements OnInit, OnDestroy {
   }
 
   async gameOver() {
+    this.subscription.unsubscribe();
     let id = this.firestore.createId();
     const documento = this.firestore.doc("puntos-heroes/" + id);
     documento.set(
     {
       tiempo : this.timer,
       usuario: this.auth.nombre,
-      horoe: this.heroe,
+      heroe: this.heroe,
       equipo: this.equipo
     });
 

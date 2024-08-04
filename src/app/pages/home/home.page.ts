@@ -17,13 +17,13 @@ export class HomePage implements OnInit {
 
   public arrayMarvel: Array<any> = [
     { hero: 'Spiderman', logo: 'spidermanlogo3'}, 
-    { hero: 'CapAmerica', logo: 'capilogo2'}, 
+    { hero: 'CapitanAmerica', logo: 'capilogo2'}, 
     { hero: 'BlackWidow', logo: 'BlackWidowLogoPNG'}
   ];
   public arrayDC: Array<any> = [
     { hero: 'WonderWoman', logo: 'WWlogo'}, 
-    { hero: 'Superman2', logo: 'supermanlogo'}, 
-    { hero: 'Batman2', logo: 'Batmanlogopng'}
+    { hero: 'Superman', logo: 'supermanlogo'}, 
+    { hero: 'Batman', logo: 'Batmanlogopng'}
   ];
   public arrayClass: Array<string> = ['red', 'blue', 'dark'];
 
@@ -48,7 +48,13 @@ export class HomePage implements OnInit {
   }
 
   chooseHero(heroe: string) {
+    this.showTeam = true;
+    this.showHeroes = false;
     this.router.navigateByUrl(`/juego/${heroe}/${this.team}`);
+  }
+
+  showPuntos() {
+    this.router.navigateByUrl("/puntuacion");
   }
 
   cerraSesion() {

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="" (click)="onVolver()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tabla de puntuación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="tabla">
+    <ion-segment value="facil" (ionChange)="onChangeDif($event)">
+      <ion-segment-button value="marvel">
+        <ion-label>MARVEL</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="dc">
+        <ion-label>DC Cómics</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <h1>Mejores 5 registros:</h1>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="head">Nombre</ion-col>
+        <ion-col class="head">Tiempo</ion-col>
+        <ion-col class="head">Heroe</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let user of this.topPuntos">
+        <ion-col class="body">{{user.usuario}}</ion-col>
+        <ion-col class="body">{{user.tiempo}} segundos</ion-col>
+        <ion-col class="body">{{user.heroe}}</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div *ngIf="this.equipo == 'marvel'">
+      <img src="../../../assets/images/MARVEL.png">
+    </div>
+    <div *ngIf="this.equipo == 'dc'">
+      <img src="../../../assets/images/DC.png">
+    </div>
+  </div>
+</ion-content>
